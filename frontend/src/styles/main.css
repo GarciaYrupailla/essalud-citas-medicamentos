@@ -531,6 +531,119 @@ body {
   color: var(--essalud-blue);
 }
 
+.login-page {
+  background: #fff;
+  display: grid;
+  grid-template-columns: minmax(0, 52vw) minmax(420px, 1fr);
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.login-hero {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.login-hero::after {
+  background:
+    rgba(0, 82, 155, 0.15),
+    linear-gradient(180deg, rgba(0, 78, 130, 0.08), rgba(0, 69, 115, 0.34)),
+    linear-gradient(90deg, rgba(0, 59, 113, 0.18), transparent 42%);
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+.login-hero img {
+  filter: saturate(0.78) contrast(0.95);
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.login-panel {
+  align-items: center;
+  background:
+    radial-gradient(circle at top right, rgba(0, 119, 190, 0.08), transparent 34%),
+    #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  padding: clamp(2rem, 5vw, 5rem);
+}
+
+.login-card {
+  max-width: 430px;
+  padding: 0.5rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.login-logo {
+  display: block;
+  margin: 0 auto 0.65rem;
+  max-width: 205px;
+  width: 62%;
+}
+
+.login-subtitle {
+  color: #4b5563;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: 400;
+  margin: 0 0 2rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 1.4rem;
+  text-align: left;
+}
+
+.login-field label {
+  color: #666;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.login-field input {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #0b6f9e;
+  border-radius: 0;
+  color: #1f2937;
+  font-size: 1rem;
+  outline: 0;
+  padding: 0.35rem 0.2rem 0.55rem;
+  width: 100%;
+}
+
+.login-field input:focus {
+  border-bottom-color: var(--essalud-blue);
+  box-shadow: 0 6px 10px -10px rgba(0, 59, 113, 0.8);
+}
+
+.login-submit {
+  background: linear-gradient(180deg, #0877bd 0%, #005ea8 100%);
+  border: 0;
+  border-radius: 0.4rem;
+  box-shadow: 0 14px 28px rgba(0, 94, 168, 0.22);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  padding: 0.9rem 1rem;
+  width: 100%;
+}
+
+.login-submit:hover {
+  background: linear-gradient(180deg, #006fb2 0%, #004f90 100%);
+}
+
 @media (max-width: 768px) {
   .app-shell {
     display: grid;
@@ -563,6 +676,32 @@ body {
 
   .dashboard-period-selector button {
     flex: 1;
+  }
+
+  .login-page {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .login-hero {
+    height: 34vh;
+    min-height: 240px;
+  }
+
+  .login-panel {
+    min-height: 66vh;
+    padding: 1.5rem;
+  }
+
+  .login-card {
+    max-width: 420px;
+  }
+
+  .login-subtitle {
+    font-size: 1.15rem;
+    margin-bottom: 1.35rem;
   }
 }
 
