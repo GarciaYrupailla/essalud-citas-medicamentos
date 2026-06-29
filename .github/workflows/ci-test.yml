@@ -13,6 +13,9 @@ jobs:
       run:
         working-directory: backend
 
+    env:
+      PORT: 4000
+
     steps:
       - uses: actions/checkout@v4
 
@@ -23,8 +26,10 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      - name: Verificar inicio del servidor
+      - name: Iniciar servidor
         run: |
-          node src/server.js &
-          sleep 5
-          curl http://localhost:3000/api/health
+          npm start &
+          sleep 10
+
+      - name: Verificar API
+        run: curl --fail http://localhost:4000/api/health
